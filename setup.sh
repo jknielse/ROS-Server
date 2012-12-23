@@ -23,3 +23,14 @@ do
     [ $? -eq 0 ] && { continue; }
 done < prereqs.cfg
 
+git clone git://github.com/joyent/node.git
+
+cd node
+
+git checkout v0.6.8
+
+./configure
+
+make
+
+make install
