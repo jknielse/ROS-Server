@@ -1,0 +1,4 @@
+This repo is meant to be run on an a public server and 
+facilitates communications between the robotPathDemo running
+on an iOS device, and a robot the resides on a LAN that needn't
+make itself known to all of the blogosphere.
