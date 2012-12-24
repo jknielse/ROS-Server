@@ -23,7 +23,7 @@ do
     echo "  Installing $pkg"
     apt-get install --force-yes "$pkg" &> /dev/null
     [ $? -eq 0 ] && { continue; }
-done < /home/ubuntu/ROS-server/prereqs.cfg
+done < /home/ubuntu/ROS-Server/prereqs.cfg
 
 cd ~
 
