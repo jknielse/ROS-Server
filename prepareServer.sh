@@ -13,4 +13,4 @@ scp ~/.ssh/id_rsa ubuntu@$1:~/.ssh/
 scp ~/.ssh/id_rsa.pub ubuntu@$1:~/.ssh/
 
 ssh ubuntu@$1 git clone git@github.com:jknielse/ROS-Server.git
-ssh ubuntu@$1 sudo /home/ubuntu/ROS-Server/setup.sh
+ssh ubuntu@$1 sudo /home/ubuntu/ROS-Server/setup.sh 

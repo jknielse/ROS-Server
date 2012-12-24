@@ -18,10 +18,11 @@ apt-get update &> /dev/null
 
 echo "Installing prerequisite packages from prereqs.cfg"
 
+
 while read -r pkg
 do
     echo "  Installing $pkg"
-    apt-get install --force-yes "$pkg" &> /dev/null
+    apt-get install --force-yes "$pkg" &> /home/ubuntu/ROS-Server/"${pgk}setup.log"
     [ $? -eq 0 ] && { continue; }
 done < /home/ubuntu/ROS-Server/prereqs.cfg
 
