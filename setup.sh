@@ -3,6 +3,8 @@
 #the rest of this code to run properly. It assumes that it is running on
 #an EC2 instance with the Ubuntu 12.04 image installed.
 
+
+
 if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root" 1>&2
     exit 1
@@ -21,7 +23,9 @@ do
     echo "  Installing $pkg"
     apt-get install --force-yes "$pkg" &> /dev/null
     [ $? -eq 0 ] && { continue; }
-done < prereqs.cfg
+done < /home/ubuntu/ROS-server/prereqs.cfg
+
+cd ~
 
 git clone git://github.com/joyent/node.git
 
