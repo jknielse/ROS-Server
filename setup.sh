@@ -26,24 +26,3 @@ do
     [ $? -eq 0 ] && { continue; }
 done < /home/ubuntu/ROS-Server/prereqs.cfg
 
-cd ~
-
-git clone git://github.com/joyent/node.git
-
-cd node
-
-git checkout v0.6.8
-
-./configure
-
-make
-
-make install
-
-cd ..
-
-git clone https://github.com/isaacs/npm.git
-
-cd npm
-
-sudo make install
