@@ -34,3 +34,11 @@ git checkout v0.6.8
 make
 
 make install
+
+cd ..
+
+git clone https://github.com/isaacs/npm.git
+
+cd npm
+
+sudo make install
