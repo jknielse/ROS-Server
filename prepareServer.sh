@@ -9,8 +9,21 @@ then
     exit 1
 fi
 
-scp ~/.ssh/id_rsa ubuntu@$1:~/.ssh/
-scp ~/.ssh/id_rsa.pub ubuntu@$1:~/.ssh/
+echo "Preparing to copy ssh keys to $1"
+
+scp -v ~/.ssh/id_rsa ubuntu@$1:~/.ssh/
+scp -v ~/.ssh/id_rsa.pub ubuntu@$1:~/.ssh/
+scp -v ~/.ssh/known_hosts ubuntu@$1:~/.ssh/
+
+echo "Done copying keys"
+echo "Installing git"
+
+ssh ubuntu@$1 sudo apt-get install -y git
+
+echo "Cloning ROS-Server.git"
 
 ssh ubuntu@$1 git clone git@github.com:jknielse/ROS-Server.git
+
+echo "Running setup.sh"
+
 ssh ubuntu@$1 sudo /home/ubuntu/ROS-Server/setup.sh 
