@@ -26,3 +26,4 @@ do
     [ $? -eq 0 ] && { continue; }
 done < /home/ubuntu/ROS-Server/prereqs.cfg
 
+apt-get autoremove -y
