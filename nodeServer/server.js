@@ -13,7 +13,7 @@ function startServer() {
         //Pass the path to the router, and pass request and response
         //to the function that the router finds.
         router.route(path)(request, response);
-    }).listen(8888);
+    }).listen(54545);
 }
 
 exports.start = startServer;
