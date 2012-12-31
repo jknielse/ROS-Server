@@ -10,8 +10,9 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-echo "Running 'apt-get update'..."
+add-apt-repository ppa:chris-lea/node.js
 
+echo "Running 'apt-get update'..."
 apt-get update &> /dev/null
 
 [ $? -ne 0 ] && echo Update failed, exiting script && exit 1
