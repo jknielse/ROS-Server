@@ -38,7 +38,9 @@ for (var mod in modules) {
 }
 
 function nullRoute(request, response) {
-    //For now, we simply do nothing if a route wasn't found.
+    response.writeHead(404, {"Content-Type": "text/plain"});
+    response.write('There exists no such call, good sir.');
+    response.end();
 }
 
 //route will return a function that takes two arguments, assumed to
